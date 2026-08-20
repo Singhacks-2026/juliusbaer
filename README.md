@@ -184,9 +184,7 @@ Recommendations should support **human decision-making rather than replace it**.
 
 ## 📊 Data
 
-Julius Baer-provided datasets and supporting materials are **to be confirmed**.
-
-Potential data categories may include:
+Julius Baer-provided datasets and supporting materials are xyz
 
 * Portfolio holdings and performance
 * Investment mandates
