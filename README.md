@@ -335,17 +335,15 @@ A menu, not a checklist. Two or three done well beats all of them done thinly.
 
 Your final presentation should include:
 
-* Clear articulation of the problem
 * Clear representation of the proposed solution
 * Main functional highlights
 * Explanation of how the solution addresses the challenge
 * Demonstration of how AI-generated insights translate into RM actions
 * Visual screens, journeys, diagrams or charts where useful
 
-Concise, comprehensive, and easy to follow.
+Concise, comprehensive, and easy to follow. Do not spend too much time on articulating the problem, your time is limited - spend more time on the solution. 
 
-If something in the data looks wrong or contradictory, **say so in your presentation**. Noticing is
-worth more than quietly working around it.
+
 
 ---
 
