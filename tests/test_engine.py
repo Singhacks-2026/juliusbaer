@@ -13,6 +13,7 @@ from wealth_intelligence.data_model import TODAY, load_book
 from wealth_intelligence.detectors import (
     detect_collateral,
     detect_concentration,
+    detect_income_suitability,
     detect_liquidity,
     detect_mandate,
 )
@@ -30,6 +31,7 @@ class LoadTests(unittest.TestCase):
         self.assertEqual(len(self.book.portfolios), 24)
         self.assertEqual(len(self.book.holdings), 1015)
         self.assertEqual(len(self.book.instruments), 62)
+        self.assertEqual(len(self.book.transactions), 393)
 
     def test_fx_hkd_conversion(self):
         # USDHKD ~ 7.81 at TODAY: 7.81 HKD -> ~1 USD.
@@ -102,6 +104,36 @@ class MandateTests(unittest.TestCase):
         findings = detect_mandate(self.book, "CL-0005")
         exclusions = [f for f in findings if f.category == "exclusion"]
         self.assertTrue(exclusions, "CL-0005 holds excluded names in a sustainable mandate")
+
+
+class IncomeSuitabilityTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.book = load_book()
+
+    def test_retiree_impaired_capital_horizon(self):
+        # CL-0012 (Cheung, retired): income covers the draw, so this must NOT be
+        # framed as a shortfall — it must flag impaired long-dated capital.
+        findings = detect_income_suitability(self.book, "CL-0012")
+        self.assertTrue(findings)
+        f = findings[0]
+        self.assertGreaterEqual(f.facts["coverage_ratio"], 1.0)  # income covers draw
+        self.assertTrue(f.facts["maturities_beyond_horizon"])    # bond beyond horizon
+        self.assertIn("2045", f.headline)
+        self.assertEqual(f.severity, Severity.HIGH)
+
+    def test_genuine_shortfall_flags(self):
+        # CL-0006 draws far more than the portfolio yields.
+        findings = detect_income_suitability(self.book, "CL-0006")
+        self.assertTrue(findings)
+        self.assertLess(findings[0].facts["coverage_ratio"], 0.9)
+
+    def test_pre_retirement_not_marked_retired(self):
+        # CL-0004 is "Pre-retirement" — must not be treated as retired (would
+        # otherwise over-rate severity). Branch B severity should be Medium.
+        findings = detect_income_suitability(self.book, "CL-0004")
+        if findings and findings[0].facts["coverage_ratio"] >= 0.9:
+            self.assertEqual(findings[0].severity, Severity.MEDIUM)
 
 
 class LiquidityTests(unittest.TestCase):

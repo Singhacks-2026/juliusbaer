@@ -256,6 +256,7 @@ class Book:
     facilities: list[Facility]
     commitments: list[dict[str, str]]
     cash_needs: list[dict[str, str]]
+    transactions: list[dict[str, str]]
     events: list[dict[str, str]]
     notes: list[dict[str, Any]]
     fx: FX
@@ -294,6 +295,9 @@ class Book:
 
     def commitments_of(self, client_id: str) -> list[dict[str, str]]:
         return [c for c in self.commitments if c.get("client_id") == client_id]
+
+    def transactions_of(self, client_id: str) -> list[dict[str, str]]:
+        return [t for t in self.transactions if t.get("client_id") == client_id]
 
     def instrument(self, instrument_id: str) -> Optional[Instrument]:
         return self.instruments.get(instrument_id)
@@ -457,6 +461,7 @@ def load_book(data_dir: Optional[str] = None) -> Book:
         facilities=facilities,
         commitments=_read_csv("commitments.csv"),
         cash_needs=_read_csv("planned_cash_needs.csv"),
+        transactions=_read_csv("transactions.csv"),
         events=_read_csv("event_log.csv"),
         notes=_read_json("rm_notes.json"),
         fx=fx,

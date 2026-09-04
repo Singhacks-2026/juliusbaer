@@ -53,7 +53,7 @@ explainability and auditability story: an insight an RM cannot defend in front o
 a client is not usable, so every Finding carries its `evidence` (the source rows)
 and `facts` (the numbers).
 
-## The five detectors
+## The six detectors
 
 | Detector | What it catches |
 |---|---|
@@ -61,6 +61,7 @@ and `facts` (the numbers).
 | `detect_concentration` | Single-name exposure across the whole household, **looking through** structured products and perpetuals to the name (Golden Harbour = stock + perpetual + accumulator). Separates managed (mandate-governed) from custody (client-directed legacy). |
 | `detect_mandate` | Allocation-band and single-position breaches, plus **sustainable-mandate exclusion** breaches (CL-0005 holds excluded energy/palm names in a SUSBAL mandate). Custody accounts are excluded — they are not measured against a mandate. |
 | `detect_liquidity` | Confirmed near-term cash needs and uncalled commitments vs what is genuinely sellable — **netting out collateral pledged** to a facility, and flagging currency mismatch and gated funds. |
+| `detect_income_suitability` | Recurring drawdown vs the income the portfolio actually pays. Flags a genuine **shortfall** (CL-0006), and — distinctly — a retiree **drawing on impaired long-dated capital** whose bonds mature beyond their horizon (**CL-0012**, the README's flagship case). Honest about annualised run-rate estimates. |
 | `detect_attribution` | The largest USD moves since the year-end baseline, tied to the **authoritative `event_log.csv`** by transmission channel — grounded explanation, not memory. |
 
 ## Data handling decisions (the traps this dataset sets)

@@ -18,6 +18,7 @@ assert — "honesty about uncertainty" is explicitly rewarded.
 
 from __future__ import annotations
 
+import re
 from collections import defaultdict
 from datetime import date
 from typing import Any, Optional
@@ -523,6 +524,133 @@ def _match_event(book: Book, holding) -> Optional[dict[str, str]]:
 
 
 # --------------------------------------------------------------------------- #
+# 6. Income / withdrawal sustainability
+# --------------------------------------------------------------------------- #
+# Transaction types that represent income the portfolio pays out.
+_INCOME_TYPES = {"Dividend", "Coupon", "Distribution", "Interest"}
+# Cash-need descriptions that represent recurring consumption (not investment).
+_CONSUMPTION_HINTS = ("retirement", "living", "income", "expenses", "medical",
+                      "support", "drawdown", "tuition", "fees")
+_YEAR_RE = re.compile(r"\b(20\d{2})\b")
+
+
+def _annual_portfolio_income_usd(book: Book, client_id: str) -> tuple[float, int]:
+    """Annualised income the portfolio actually paid, from transactions.
+
+    Income lands at quarter-end snapshots; we annualise from the number of
+    distinct income dates present (each is one quarter) rather than assuming a
+    full year of data.
+    """
+    by_date: dict[str, float] = defaultdict(float)
+    for t in book.transactions_of(client_id):
+        if t.get("transaction_type") in _INCOME_TYPES:
+            amt = float(t.get("amount") or 0)
+            if amt > 0:
+                by_date[t.get("trade_date", "")] += book.fx.to_usd(
+                    amt, t.get("currency", "USD"), TODAY
+                )
+    if not by_date:
+        return 0.0, 0
+    quarters = len(by_date)
+    total = sum(by_date.values())
+    return total * 4.0 / quarters, quarters
+
+
+def detect_income_suitability(book: Book, client_id: str) -> list[Finding]:
+    client = book.clients[client_id]
+
+    # Recurring consumption the client draws from the portfolio.
+    annual_draw = 0.0
+    draw_items: list[str] = []
+    for n in book.cash_needs_of(client_id):
+        rec = (n.get("recurrence") or "").lower()
+        desc = (n.get("description") or "").lower()
+        if not rec.startswith("annual"):
+            continue
+        if not any(h in desc for h in _CONSUMPTION_HINTS):
+            continue
+        amt = float(n.get("amount") or 0)
+        amt_usd = book.fx.to_usd(amt, n.get("currency", "USD"), TODAY)
+        annual_draw += amt_usd
+        draw_items.append(f"{n.get('description','')} ({usd(amt_usd)}/yr)")
+    if annual_draw <= 0:
+        return []
+
+    income, quarters = _annual_portfolio_income_usd(book, client_id)
+    coverage = income / annual_draw if annual_draw else float("inf")
+    shortfall = annual_draw - income
+
+    # Capital that would fund the draw if income falls short: is it impaired,
+    # and does any of it mature beyond the client's stated horizon?
+    holds = book.holdings_of(client_id, TODAY)
+    fi = [h for h in holds if h.asset_class == "Fixed Income"]
+    fi_below_cost = sum(h.mv for h in fi if (h.unrealised_pnl_pct or 0) < 0)
+    horizon_year = 2026 + int(float(client.raw.get("investment_horizon_years") or 0))
+    beyond_horizon = []
+    for h in fi:
+        m = _YEAR_RE.search(h.instrument_name)
+        if m and int(m.group(1)) > horizon_year and (h.unrealised_pnl_pct or 0) < 0:
+            beyond_horizon.append((h.instrument_name, int(m.group(1))))
+
+    retired = "retired" in client.life_stage.lower()  # not "pre-retirement"
+    caveat = (
+        f"Income is annualised from {quarters} observed quarter(s) and the draw is read from "
+        f"planned cash needs — both are run-rate estimates, not exact figures."
+    )
+    facts = {
+        "annual_draw_usd": round(annual_draw, 0),
+        "annual_income_usd": round(income, 0),
+        "coverage_ratio": round(coverage, 2),
+        "shortfall_usd": round(shortfall, 0),
+        "fixed_income_below_cost_usd": round(fi_below_cost, 0),
+        "horizon_year": horizon_year,
+        "maturities_beyond_horizon": [f"{nm} ({yr})" for nm, yr in beyond_horizon],
+        "income_quarters_observed": quarters,
+        "draw_items": draw_items,
+    }
+    ev = ["planned_cash_needs.csv", "transactions.csv", "holdings.csv"]
+
+    # Branch A — income does not cover the recurring draw. The gap funds
+    # consumption by selling capital.
+    if coverage < 0.9:
+        sev = Severity.HIGH if coverage < 0.6 else Severity.MEDIUM
+        detail = (
+            f"{client.client_name} draws {usd(annual_draw)} a year ({'; '.join(draw_items)}), "
+            f"but the portfolio generated only about {usd(income)} of income (annualised). "
+            f"The {usd(shortfall)} gap must come from selling assets"
+            + (f", and {usd(fi_below_cost)} of the bond book is below cost, so part of it is "
+               f"realised at a loss. " if fi_below_cost > 0 else ". ")
+            + caveat
+        )
+        return [Finding(client_id, "income", sev,
+                        f"Income covers only {coverage:.0%} of a {usd(annual_draw)}/yr draw",
+                        detail, facts, ev)]
+
+    # Branch B — income covers the draw, but a retired / near-retired client is
+    # living off a bond book that is below cost with maturities beyond their
+    # horizon. This is the README's flagship suitability conversation, and it is
+    # NOT a shortfall — the honest framing is capital quality, not cash flow.
+    if fi_below_cost > 0 and beyond_horizon:
+        nm, yr = beyond_horizon[0]
+        sev = Severity.HIGH if retired else Severity.MEDIUM
+        detail = (
+            f"Income currently covers the {usd(annual_draw)}/yr draw ({coverage:.0%}), so this "
+            f"is not a cash-flow alarm — the question is the capital behind it. "
+            f"{usd(fi_below_cost)} of the bond book sits below cost, and {nm} does not mature "
+            f"until {yr}, beyond the client's stated horizon (~{horizon_year}). "
+            f"{'The client is retired; ' if retired else ''}waiting for that bond to recover to "
+            f"par may not be a plan they can outlive, and drawing income while principal is "
+            f"impaired erodes the base. A conversation to prepare for, not a trade to rush. "
+            + caveat
+        )
+        return [Finding(client_id, "income", sev,
+                        f"Drawing income from impaired long-dated capital (bond due {yr} vs horizon ~{horizon_year})",
+                        detail, facts, ev)]
+
+    return []
+
+
+# --------------------------------------------------------------------------- #
 # Registry
 # --------------------------------------------------------------------------- #
 ALL_DETECTORS = [
@@ -530,5 +658,6 @@ ALL_DETECTORS = [
     detect_concentration,
     detect_mandate,
     detect_liquidity,
+    detect_income_suitability,
     detect_attribution,
 ]

@@ -92,7 +92,7 @@
       <span><b>Interface</b> — Streamlit RM workbench</span>
       <span><b>Core</b> — pure standard-library Python</span>
       <span><b>Book</b> — 20 clients · 24 portfolios · 1,015 positions</span>
-      <span><b>Signals</b> — 5 detectors · Σ severity² triage</span>
+      <span><b>Signals</b> — 6 detectors · Σ severity² triage</span>
       <span><b>Data</b> — synthetic, 5 dated snapshots</span>
     </div>
   </header>
@@ -101,7 +101,7 @@
     <span class="chip"><b>Python</b> · stdlib core</span>
     <span class="chip"><b>Streamlit</b> · workbench</span>
     <span class="chip"><b>Claude API</b> · Opus · explanation only</span>
-    <span class="chip"><b>unittest</b> · 13 regression tests</span>
+    <span class="chip"><b>unittest</b> · 16 regression tests</span>
     <span class="chip"><b>CSV / JSON</b> · 12 source files</span>
     <span class="chip"><b>event_log.csv</b> · authoritative events</span>
   </div>
@@ -116,7 +116,7 @@
     <figure>
       <div class="figwrap">
       <svg viewBox="0 0 1000 900" role="img" preserveAspectRatio="xMidYMin meet"
-           aria-label="Layered architecture: twelve source files feed a currency-aware data model and look-through resolver; five deterministic detectors produce ranked findings; a governance boundary separates the deterministic engine from a single grounded-explanation LLM component; the RM workbench renders book triage, client story and accept/edit/dismiss controls to the Relationship Manager.">
+           aria-label="Layered architecture: twelve source files feed a currency-aware data model and look-through resolver; six deterministic detectors produce ranked findings; a governance boundary separates the deterministic engine from a single grounded-explanation LLM component; the RM workbench renders book triage, client story and accept/edit/dismiss controls to the Relationship Manager.">
         <defs>
           <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
             <path d="M0 0 L10 5 L0 10 z" fill="#c6a763"/>
@@ -168,25 +168,29 @@
         <text x="140" y="296" class="t" font-size="13.5" font-weight="600">Signal engine · deterministic detectors</text>
         <!-- 5 detector boxes -->
         <g>
-          <rect class="box" x="140" y="308" width="140" height="52" rx="6"/>
-          <text x="210" y="330" text-anchor="middle" class="t" font-size="12.5" font-weight="600">Collateral</text>
-          <text x="210" y="347" text-anchor="middle" class="mono">LTV vs call</text>
+          <rect class="box" x="140" y="308" width="112" height="52" rx="6"/>
+          <text x="196" y="330" text-anchor="middle" class="t" font-size="11" font-weight="600">Collateral</text>
+          <text x="196" y="347" text-anchor="middle" class="mono" font-size="10.5">LTV vs call</text>
 
-          <rect class="box" x="288" y="308" width="140" height="52" rx="6"/>
-          <text x="358" y="330" text-anchor="middle" class="t" font-size="12.5" font-weight="600">Concentration</text>
-          <text x="358" y="347" text-anchor="middle" class="mono">look-through</text>
+          <rect class="box" x="260" y="308" width="112" height="52" rx="6"/>
+          <text x="316" y="330" text-anchor="middle" class="t" font-size="11" font-weight="600">Concentration</text>
+          <text x="316" y="347" text-anchor="middle" class="mono" font-size="10.5">look-through</text>
 
-          <rect class="box" x="436" y="308" width="140" height="52" rx="6"/>
-          <text x="506" y="330" text-anchor="middle" class="t" font-size="12.5" font-weight="600">Mandate</text>
-          <text x="506" y="347" text-anchor="middle" class="mono">bands · excl.</text>
+          <rect class="box" x="380" y="308" width="112" height="52" rx="6"/>
+          <text x="436" y="330" text-anchor="middle" class="t" font-size="11" font-weight="600">Mandate</text>
+          <text x="436" y="347" text-anchor="middle" class="mono" font-size="10.5">bands · excl.</text>
 
-          <rect class="box" x="584" y="308" width="140" height="52" rx="6"/>
-          <text x="654" y="330" text-anchor="middle" class="t" font-size="12.5" font-weight="600">Liquidity</text>
-          <text x="654" y="347" text-anchor="middle" class="mono">net of pledge</text>
+          <rect class="box" x="500" y="308" width="112" height="52" rx="6"/>
+          <text x="556" y="330" text-anchor="middle" class="t" font-size="11" font-weight="600">Liquidity</text>
+          <text x="556" y="347" text-anchor="middle" class="mono" font-size="10.5">net of pledge</text>
 
-          <rect class="box" x="732" y="308" width="128" height="52" rx="6"/>
-          <text x="796" y="330" text-anchor="middle" class="t" font-size="12.5" font-weight="600">Attribution</text>
-          <text x="796" y="347" text-anchor="middle" class="mono">event_log</text>
+          <rect class="box" x="620" y="308" width="112" height="52" rx="6"/>
+          <text x="676" y="330" text-anchor="middle" class="t" font-size="11" font-weight="600">Income</text>
+          <text x="676" y="347" text-anchor="middle" class="mono" font-size="10.5">draw vs yield</text>
+
+          <rect class="box" x="740" y="308" width="112" height="52" rx="6"/>
+          <text x="796" y="330" text-anchor="middle" class="t" font-size="11" font-weight="600">Attribution</text>
+          <text x="796" y="347" text-anchor="middle" class="mono" font-size="10.5">event_log</text>
         </g>
         <!-- triage bar -->
         <rect class="box" x="140" y="374" width="720" height="36" rx="6" style="stroke:#c6a763"/>
@@ -255,7 +259,7 @@
       <tbody>
         <tr><td>Data model</td><td>Load and join the 12 files into one currency-aware, indexed Book; convert every value to USD from <span class="path">holdings.market_value_usd</span>.</td><td class="mono">data_model.py</td></tr>
         <tr><td>Look-through</td><td>Resolve a stock, its perpetual and structured products to the single issuer they really expose the client to.</td><td class="mono">lookthrough.py</td></tr>
-        <tr><td>Detectors</td><td>Five deterministic signals: collateral, concentration, mandate &amp; exclusion, liquidity, event attribution.</td><td class="mono">detectors.py</td></tr>
+        <tr><td>Detectors</td><td>Six deterministic signals: collateral, concentration, mandate &amp; exclusion, liquidity, income &amp; drawdown suitability, event attribution.</td><td class="mono">detectors.py</td></tr>
         <tr><td>Engine</td><td>Run every detector across the book and rank clients by Σ severity² — the triage.</td><td class="mono">engine.py</td></tr>
         <tr><td>Explainer</td><td>Grounded natural-language read via Claude; cached to disk, deterministic fallback offline.</td><td class="mono">explainer.py</td></tr>
         <tr><td>Workbench</td><td>The three-zone RM interface: triage → client story → accept/edit/dismiss.</td><td class="mono">streamlit_app.py</td></tr>
