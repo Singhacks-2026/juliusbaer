@@ -1,0 +1,17 @@
+event_date,event_type,region,description,primary_transmission,severity
+2025-12-31,Market,Global,"Gold closes 2025 up roughly 64% for the year after breaching USD 3,000 and USD 4,000 for the first time. Record annual gold ETF inflows of about USD 89bn.","Gold, precious metals miners, inflation hedges",High
+2026-01-26,Market,Global,"Spot gold trades above USD 5,000 per ounce for the first time.","Gold, precious metals",High
+2026-01-28,Market,Global,"Gold prints an intraday all-time high near USD 5,589 per ounce, then begins a multi-month consolidation.","Gold, precious metals",High
+2026-02-28,Geopolitical,Middle East,United States and Israel commence military operations against Iran.,"Energy, defence, airlines, EM credit, safe havens",Severe
+2026-03-02,Market,Global,Brent crude rises 10-13% to around USD 80-82 per barrel as tanker traffic in the Strait of Hormuz stalls and a major Saudi refinery shuts down.,"Energy, transport, shipping",High
+2026-03-04,Geopolitical,Middle East,Strait of Hormuz effectively closed. Brent surges past USD 120. QatarEnergy declares force majeure on all exports.,"Energy, LNG, shipping, Gulf credit, airlines",Severe
+2026-03-11,Policy,Global,IEA member countries agree to release 400 million barrels from emergency reserves.,"Energy, oil-linked structured products",High
+2026-03-12,Market,Global,"IEA characterises the conflict as the largest supply disruption in the history of the global oil market, with roughly 7.5% of world supply affected.","Energy, inflation-sensitive assets",Severe
+2026-04-30,Policy,Europe,European Central Bank and several other central banks raise policy rates in response to an energy-driven inflation impulse.,"European fixed income, EUR assets",Medium
+2026-05-04,Market,Global,Brent crude peaks at approximately USD 114 per barrel.,"Energy, transport",High
+2026-06-05,Market,United States,Megacap technology complex briefly sheds around USD 2 trillion in market value on AI capital expenditure concerns before recovering later in the month.,"US technology, concentrated equity, collateralised lending",High
+2026-06-17,Policy,United States,Federal Reserve holds the target range at 3.50-3.75% at the first meeting under new Chair Kevin Warsh. Easing timeline pushed out.,"Duration, rate-sensitive credit, USD",High
+2026-06-19,Market,United States,"US 10-year Treasury yield rises to about 4.46%, near its highest level in more than a year.",Long-duration fixed income,High
+2026-06-30,Market,Global,"Half-year close. US equities near record levels on narrow, technology-led leadership. Non-traded private credit vehicles show continued redemption stress.","Private credit, semi-liquid alternatives",Medium
+2026-07-29,Policy,United States,Federal Reserve holds again at 3.50-3.75% with three dissents. US 10-year yield reaches 4.71% by month end. Market pricing shifts from cuts toward possible hikes.,"Duration, growth equity valuations",High
+2026-08-05,Geopolitical,Middle East,United States reimposes a naval blockade following renewed Iranian attacks on commercial vessels. Energy risk premium re-widens.,"Energy, shipping, insurance, Gulf exposure",Severe

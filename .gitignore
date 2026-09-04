@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# Scratch / extraction
+.tmp_extract/
+_extracted/
+
+# OS
+.DS_Store

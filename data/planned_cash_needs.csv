@@ -1,0 +1,21 @@
+need_id,client_id,description,currency,amount,due_from,due_to,recurrence,certainty
+CN-001,CL-0001,Deposit on Singapore residential property purchase,SGD,9000000,2027-03-01,2027-06-30,One-off,Likely
+CN-002,CL-0002,Estimated Singapore tax on secondary share sale,USD,4200000,2027-01-01,2027-04-30,One-off,Conditional on the sale completing
+CN-003,CL-0002,Family trust establishment and funding,USD,2000000,2026-11-01,2027-03-31,One-off,Likely
+CN-004,CL-0003,German inheritance tax instalment,EUR,3400000,2026-10-01,2026-12-31,One-off,Confirmed
+CN-005,CL-0004,Annual retirement drawdown from Q2 2027,USD,1450000,2027-04-01,2045-04-01,Annual,Confirmed
+CN-006,CL-0005,"Children's university fees, Australia",SGD,180000,2026-09-01,2031-09-01,Annual,Confirmed
+CN-007,CL-0006,"US university fees, two children",USD,5000000,2026-09-01,2030-09-01,Annual instalments,Confirmed
+CN-008,CL-0006,Private equity capital calls,USD,3000000,2026-10-01,2028-03-31,Irregular,Likely
+CN-009,CL-0007,Initial endowment of charitable foundation,USD,12000000,2027-01-01,2027-12-31,One-off,Likely
+CN-010,CL-0008,"University fees, two children",SGD,420000,2027-01-01,2033-01-01,Annual,Confirmed
+CN-011,CL-0011,Estate duty and legal costs on succession planning,SGD,2800000,2026-12-01,2027-12-31,One-off,Likely
+CN-012,CL-0012,Living expenses and medical care,USD,1280000,2026-01-01,2038-01-01,Annual,Confirmed
+CN-013,CL-0014,Mid-Levels redevelopment equity contribution,HKD,60000000,2026-11-01,2027-06-30,One-off,Confirmed
+CN-014,CL-0016,Support for elderly parents in Japan,JPY,18000000,2026-01-01,2034-01-01,Annual,Confirmed
+CN-015,CL-0017,G3 education programme,USD,900000,2026-09-01,2034-09-01,Annual,Confirmed
+CN-016,CL-0017,Outstanding private markets commitments,USD,15800000,2026-10-01,2028-06-30,Irregular,Confirmed
+CN-017,CL-0019,Seed capital for Singapore family office entity,USD,5000000,2027-01-01,2027-12-31,One-off,Likely
+CN-018,CL-0020,Hong Kong property purchase,USD,3600000,2027-04-01,2027-12-31,One-off,Likely
+CN-019,CL-0020,Healthcare foundation seed funding,USD,2500000,2028-01-01,2028-12-31,One-off,Aspirational
+CN-020,CL-0018,Italian succession planning and notarial costs,EUR,850000,2027-06-01,2028-06-30,One-off,Likely

@@ -1,0 +1,63 @@
+instrument_id,instrument_name,asset_class,sub_asset_class,sector,region,currency,liquidity_tier,underlying_reference,sustainability_excluded,concentration_limit_applies,price_2025-12-31,price_2026-02-27,price_2026-03-31,price_2026-06-30,price_2026-08-26
+SYN-EQ-0001,Global Developed Equity Index Fund,Equity,Developed Market Equity,Diversified,Global,USD,Daily,,N,N,218.4,227.1,223.0,234.2,238.0
+SYN-EQ-0002,US Large Cap Core Fund,Equity,Developed Market Equity,Diversified,North America,USD,Daily,,N,N,342.5,356.3,349.9,367.7,373.6
+SYN-EQ-0003,US Technology Leaders Fund,Equity,Developed Market Equity,Information Technology,North America,USD,Daily,,N,N,512.8,556.4,539.1,573.6,592.1
+SYN-EQ-0004,European Equity Fund,Equity,Developed Market Equity,Diversified,Europe,EUR,Daily,,N,N,178.2,182.4,175.1,181.9,184.5
+SYN-EQ-0005,Japan Equity Fund,Equity,Developed Market Equity,Diversified,Japan,JPY,Daily,,N,N,28450.0,29180.0,28020.0,29610.0,30150.0
+SYN-EQ-0006,Global Healthcare Equity Fund,Equity,Developed Market Equity,Health Care,Global,USD,Daily,,N,N,156.3,158.9,160.2,163.8,166.1
+SYN-EQ-0007,Global Defence and Aerospace Equity Fund,Equity,Developed Market Equity,Industrials,Global,USD,Daily,,Y,N,244.1,258.8,302.7,320.2,327.1
+SYN-EQ-0008,Global Energy Majors Equity Fund,Equity,Developed Market Equity,Energy,Global,USD,Daily,,Y,N,189.6,195.3,242.7,229.4,239.9
+SYN-EQ-0009,Global Listed Infrastructure Fund,Equity,Developed Market Equity,Utilities,Global,USD,Daily,,N,N,132.4,134.1,138.9,137.2,139.8
+SYN-EQ-0010,Global Luxury and Consumer Brands Fund,Equity,Developed Market Equity,Consumer Discretionary,Europe,EUR,Daily,,N,N,264.8,271.2,249.4,244.1,240.6
+SYN-EQ-0020,Asia ex-Japan Equity Fund,Equity,Emerging Market Equity,Diversified,Asia ex-Japan,USD,Daily,,N,N,96.4,98.8,94.5,97.8,99.3
+SYN-EQ-0021,Greater China Equity Fund,Equity,Emerging Market Equity,Diversified,Greater China,HKD,Daily,,N,N,142.6,144.1,137.2,141.0,143.2
+SYN-EQ-0022,India Equity Fund,Equity,Emerging Market Equity,Diversified,South Asia,USD,Daily,,N,N,88.9,91.3,87.6,92.4,94.1
+SYN-EQ-0023,ASEAN Equity Fund,Equity,Emerging Market Equity,Diversified,Southeast Asia,SGD,Daily,,N,N,74.2,75.6,72.9,76.1,76.9
+SYN-EQ-0024,Singapore REIT Income Fund,Equity,Real Estate Securities,Real Estate,Singapore,SGD,Daily,,N,N,118.5,119.1,113.8,111.9,110.2
+SYN-EQ-0025,Asia Pacific Shipping and Logistics Fund,Equity,Emerging Market Equity,Industrials,Asia Pacific,USD,Daily,,N,N,108.3,110.5,128.9,122.4,130.1
+SYN-ST-0101,Bara Nusantara Energy Tbk,Equity,Single Stock,Energy,Indonesia,IDR,Daily,,Y,Y,8450.0,8720.0,11480.0,10920.0,11340.0
+SYN-ST-0102,Meridian Semiconductor Corp,Equity,Single Stock,Information Technology,North America,USD,Daily,,N,Y,428.6,486.2,452.3,471.8,498.4
+SYN-ST-0103,Helios Cloud Systems Inc,Equity,Single Stock,Information Technology,North America,USD,Daily,,N,Y,218.4,241.6,229.8,246.3,258.7
+SYN-ST-0104,Pacific Orient Shipping Ltd,Equity,Single Stock,Industrials,Hong Kong,HKD,Daily,,N,Y,24.8,25.6,31.4,29.2,31.9
+SYN-ST-0105,Sunrise Palm Resources Ltd,Equity,Single Stock,Consumer Staples,Southeast Asia,SGD,Daily,,Y,Y,3.42,3.51,3.88,3.74,3.81
+SYN-ST-0106,Golden Harbour Properties Ltd,Equity,Single Stock,Real Estate,Hong Kong,HKD,Daily,,N,Y,18.6,18.4,15.9,14.7,14.1
+SYN-ST-0107,Nordvind Industrial AB,Equity,Single Stock,Industrials,Europe,EUR,Daily,,N,Y,412.3,421.8,398.6,409.2,414.7
+SYN-ST-0108,Kanto Pharma Holdings KK,Equity,Single Stock,Health Care,Japan,JPY,Daily,,N,Y,6840.0,6980.0,7120.0,7340.0,7480.0
+SYN-ST-0109,Verdant Health Group Ltd,Equity,Single Stock,Health Care,Singapore,SGD,Daily,,N,Y,5.68,5.82,5.74,6.02,6.15
+SYN-FI-0201,US Treasury 2.375% due 2045,Fixed Income,Government Bond,Sovereign,North America,USD,Daily,,N,N,68.4,70.1,62.8,59.9,58.2
+SYN-FI-0202,US Treasury 4.125% due 2028,Fixed Income,Government Bond,Sovereign,North America,USD,Daily,,N,N,100.2,100.6,99.4,99.1,98.9
+SYN-FI-0203,Global Investment Grade Corporate Bond Fund,Fixed Income,Investment Grade Credit,Corporate,Global,USD,Daily,,N,N,102.4,103.2,99.6,98.1,97.3
+SYN-FI-0204,Asia Investment Grade Credit Fund,Fixed Income,Investment Grade Credit,Corporate,Asia,USD,Daily,,N,N,98.6,99.3,95.8,94.6,93.9
+SYN-FI-0205,Asia High Yield Bond Fund,Fixed Income,High Yield Credit,Corporate,Asia,USD,Daily,,N,N,88.4,89.6,83.2,82.1,81.0
+SYN-FI-0206,Pacific Rim Bank 4.75% Perpetual,Fixed Income,Subordinated Perpetual,Financials,Asia,USD,Weekly,,N,Y,96.8,97.9,89.4,86.2,84.6
+SYN-FI-0207,Golden Harbour Properties 5.25% Perpetual,Fixed Income,Subordinated Perpetual,Real Estate,Hong Kong,USD,Weekly,,N,Y,82.4,83.1,68.9,61.2,56.8
+SYN-FI-0208,Short Duration USD Bond Fund,Fixed Income,Short Duration,Corporate,Global,USD,Daily,,N,N,101.1,101.5,100.7,101.3,101.7
+SYN-FI-0209,EUR Investment Grade Bond Fund,Fixed Income,Investment Grade Credit,Corporate,Europe,EUR,Daily,,N,N,99.8,100.4,95.6,93.8,92.9
+SYN-FI-0210,Emerging Market Sovereign Bond Fund,Fixed Income,Emerging Market Debt,Sovereign,Emerging Markets,USD,Daily,,N,N,92.6,93.8,87.4,86.1,85.2
+SYN-FI-0211,Singapore Government Securities 2.75% due 2036,Fixed Income,Government Bond,Sovereign,Singapore,SGD,Daily,,N,N,97.4,98.2,94.1,92.6,91.8
+SYN-FI-0212,Global Inflation-Linked Bond Fund,Fixed Income,Inflation Linked,Sovereign,Global,USD,Daily,,N,N,96.8,97.4,101.2,102.6,103.4
+SYN-AL-0301,Meridian Private Equity Fund VII,Alternatives,Private Equity,Diversified,Global,USD,Illiquid,,N,Y,1420.0,1420.0,1420.0,1462.0,1508.0
+SYN-AL-0302,Orchard Private Credit Fund II,Alternatives,Private Credit,Corporate,Global,USD,Quarterly Gate,,N,Y,1082.0,1094.0,1098.0,1041.0,1006.0
+SYN-AL-0303,Tanjong Global Macro Fund,Alternatives,Hedge Fund,Macro,Global,USD,Monthly,,N,Y,1860.0,1902.0,2038.0,2094.0,2148.0
+SYN-AL-0304,Harborline Long Short Equity Fund,Alternatives,Hedge Fund,Equity Long Short,Global,USD,Monthly,,N,Y,1240.0,1286.0,1218.0,1252.0,1274.0
+SYN-AL-0305,Asia Real Estate Opportunity Fund III,Alternatives,Private Real Estate,Real Estate,Asia,SGD,Illiquid,,N,Y,1150.0,1150.0,1122.0,1122.0,1084.0
+SYN-AL-0306,Direct Property - Sentosa Cove Residence,Alternatives,Direct Real Estate,Real Estate,Singapore,SGD,Illiquid,,N,Y,8600000.0,8600000.0,8600000.0,8750000.0,8750000.0
+SYN-AL-0307,Direct Property - Mid-Levels Apartment,Alternatives,Direct Real Estate,Real Estate,Hong Kong,HKD,Illiquid,,N,Y,42000000.0,42000000.0,42000000.0,40500000.0,40500000.0
+SYN-AL-0308,Unlisted Holding - Aranya Technologies Pte Ltd,Alternatives,Private Equity,Information Technology,Singapore,USD,Illiquid,"Series D preference shares, last priced round Sep-2025",N,Y,84.0,84.0,84.0,84.0,84.0
+SYN-AL-0309,Global Infrastructure Debt Fund,Alternatives,Private Credit,Infrastructure,Global,USD,Quarterly Gate,,N,Y,104.2,104.8,102.1,100.8,100.2
+SYN-CM-0401,Physical Gold Allocated Account,Commodities,Precious Metals,Gold,Global,USD,Daily,"XAU spot, allocated, Singapore vault",N,N,4310.0,5050.0,5240.0,4780.0,4622.6
+SYN-CM-0402,Gold Bullion ETF,Commodities,Precious Metals,Gold,Global,USD,Daily,XAU spot,N,N,398.2,466.6,484.2,441.6,427.1
+SYN-CM-0403,Broad Commodity Index Fund,Commodities,Diversified Commodities,Diversified,Global,USD,Daily,,Y,N,118.4,121.6,142.8,136.2,141.3
+SYN-SP-0501,"Fixed Coupon Note ref. Basket A, 8.50% p.a., 12M",Structured Products,Yield Enhancement,Multi,Global,USD,Illiquid,Worst-of basket: Global Energy Majors ADR / Gulf Marine Services / Helios Cloud Systems,Y,Y,100.0,101.2,107.4,105.8,106.9
+SYN-SP-0502,"Equity Linked Note ref. Helios Cloud Systems, 11.00% p.a., 6M",Structured Products,Yield Enhancement,Information Technology,North America,USD,Illiquid,Single underlying: Helios Cloud Systems Inc,N,Y,100.0,102.3,98.6,103.4,104.8
+SYN-SP-0503,"Accumulator ref. Golden Harbour Properties Ltd, 12M",Structured Products,Accumulator,Real Estate,Hong Kong,HKD,Illiquid,"Daily accumulation at strike HKD 17.20, knock-out HKD 19.80, double-up below strike",N,Y,100.0,98.2,76.4,64.8,58.3
+SYN-SP-0504,"Capital Protected Note ref. Gold, 24M",Structured Products,Capital Protected,Gold,Global,USD,Illiquid,"Underlying: XAU spot, 100% capital protection at maturity, 70% participation",N,Y,100.0,108.6,111.2,104.3,102.1
+SYN-SP-0505,"Fixed Coupon Note ref. Basket C, 9.20% p.a., 12M",Structured Products,Yield Enhancement,Multi,Asia,HKD,Illiquid,Worst-of basket: Pacific Orient Shipping / Global Energy Majors ADR / Bara Nusantara Energy,Y,Y,100.0,101.6,108.9,106.4,108.2
+SYN-SP-0506,"Autocallable ref. Asia Banks Basket, 7.80% p.a.",Structured Products,Yield Enhancement,,Asia,USD,Illiquid,"Worst-of basket: three Asian banking majors, autocall observation quarterly",N,Y,100.0,101.4,96.2,98.8,99.6
+SYN-CA-0601,USD Call Deposit,Cash and Equivalents,Deposit,Cash,Global,USD,Daily,,N,N,1.0,1.0,1.0,1.0,1.0
+SYN-CA-0602,SGD Fixed Deposit 3M,Cash and Equivalents,Deposit,Cash,Singapore,SGD,Monthly,,N,N,1.0,1.0,1.0,1.0,1.0
+SYN-CA-0603,HKD Call Deposit,Cash and Equivalents,Deposit,Cash,Hong Kong,HKD,Daily,,N,N,1.0,1.0,1.0,1.0,1.0
+SYN-CA-0604,EUR Call Deposit,Cash and Equivalents,Deposit,Cash,Europe,EUR,Daily,,N,N,1.0,1.0,1.0,1.0,1.0
+SYN-CA-0605,CHF Call Deposit,Cash and Equivalents,Deposit,Cash,Europe,CHF,Daily,,N,N,1.0,1.0,1.0,1.0,1.0
+SYN-CA-0606,JPY Call Deposit,Cash and Equivalents,Deposit,Cash,Japan,JPY,Daily,,N,N,1.0,1.0,1.0,1.0,1.0
+SYN-CA-0607,USD Money Market Fund,Cash and Equivalents,Money Market,Cash,Global,USD,Daily,,N,N,102.8,103.4,104.0,104.7,105.2

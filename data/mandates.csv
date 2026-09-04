@@ -1,0 +1,49 @@
+mandate_code,mandate_name,asset_class,min_pct,target_pct,max_pct,max_single_position_pct,mandate_notes
+CONS,Conservative,Cash and Equivalents,5,10,25,10.0,Capital preservation. Max 10% in any single position.
+CONS,Conservative,Fixed Income,45,60,75,10.0,Capital preservation. Max 10% in any single position.
+CONS,Conservative,Equity,10,20,30,10.0,Capital preservation. Max 10% in any single position.
+CONS,Conservative,Alternatives,0,5,15,10.0,Capital preservation. Max 10% in any single position.
+CONS,Conservative,Commodities,0,5,10,10.0,Capital preservation. Max 10% in any single position.
+CONS,Conservative,Structured Products,0,0,10,10.0,Capital preservation. Max 10% in any single position.
+INC,Income,Cash and Equivalents,3,8,20,10.0,Yield generation with moderate capital risk.
+INC,Income,Fixed Income,40,55,70,10.0,Yield generation with moderate capital risk.
+INC,Income,Equity,15,25,35,10.0,Yield generation with moderate capital risk.
+INC,Income,Alternatives,0,7,15,10.0,Yield generation with moderate capital risk.
+INC,Income,Commodities,0,2,8,10.0,Yield generation with moderate capital risk.
+INC,Income,Structured Products,0,3,12,10.0,Yield generation with moderate capital risk.
+BAL,Balanced,Cash and Equivalents,2,7,18,12.0,Balanced growth and income.
+BAL,Balanced,Fixed Income,25,35,50,12.0,Balanced growth and income.
+BAL,Balanced,Equity,30,40,55,12.0,Balanced growth and income.
+BAL,Balanced,Alternatives,0,10,20,12.0,Balanced growth and income.
+BAL,Balanced,Commodities,0,3,10,12.0,Balanced growth and income.
+BAL,Balanced,Structured Products,0,5,15,12.0,Balanced growth and income.
+BALG,Balanced Growth,Cash and Equivalents,2,5,15,15.0,Growth tilt with a fixed income anchor.
+BALG,Balanced Growth,Fixed Income,15,25,40,15.0,Growth tilt with a fixed income anchor.
+BALG,Balanced Growth,Equity,40,50,65,15.0,Growth tilt with a fixed income anchor.
+BALG,Balanced Growth,Alternatives,0,13,25,15.0,Growth tilt with a fixed income anchor.
+BALG,Balanced Growth,Commodities,0,3,10,15.0,Growth tilt with a fixed income anchor.
+BALG,Balanced Growth,Structured Products,0,4,15,15.0,Growth tilt with a fixed income anchor.
+GROW,Growth,Cash and Equivalents,1,4,12,15.0,Long-horizon capital appreciation.
+GROW,Growth,Fixed Income,5,12,25,15.0,Long-horizon capital appreciation.
+GROW,Growth,Equity,50,62,78,15.0,Long-horizon capital appreciation.
+GROW,Growth,Alternatives,0,17,30,15.0,Long-horizon capital appreciation.
+GROW,Growth,Commodities,0,2,8,15.0,Long-horizon capital appreciation.
+GROW,Growth,Structured Products,0,3,15,15.0,Long-horizon capital appreciation.
+DYN,Dynamic Opportunistic,Cash and Equivalents,0,3,15,20.0,"High risk tolerance, wide tactical latitude."
+DYN,Dynamic Opportunistic,Fixed Income,0,5,20,20.0,"High risk tolerance, wide tactical latitude."
+DYN,Dynamic Opportunistic,Equity,45,60,85,20.0,"High risk tolerance, wide tactical latitude."
+DYN,Dynamic Opportunistic,Alternatives,0,25,45,20.0,"High risk tolerance, wide tactical latitude."
+DYN,Dynamic Opportunistic,Commodities,0,2,10,20.0,"High risk tolerance, wide tactical latitude."
+DYN,Dynamic Opportunistic,Structured Products,0,5,20,20.0,"High risk tolerance, wide tactical latitude."
+ALTS,Alternatives Sleeve,Cash and Equivalents,0,3,15,25.0,Dedicated private markets and hedge fund sleeve. Measured separately from the household strategic allocation. Max 25% in any single fund.
+ALTS,Alternatives Sleeve,Fixed Income,0,5,25,25.0,Dedicated private markets and hedge fund sleeve. Measured separately from the household strategic allocation. Max 25% in any single fund.
+ALTS,Alternatives Sleeve,Equity,0,0,20,25.0,Dedicated private markets and hedge fund sleeve. Measured separately from the household strategic allocation. Max 25% in any single fund.
+ALTS,Alternatives Sleeve,Alternatives,60,85,100,25.0,Dedicated private markets and hedge fund sleeve. Measured separately from the household strategic allocation. Max 25% in any single fund.
+ALTS,Alternatives Sleeve,Commodities,0,0,10,25.0,Dedicated private markets and hedge fund sleeve. Measured separately from the household strategic allocation. Max 25% in any single fund.
+ALTS,Alternatives Sleeve,Structured Products,0,0,15,25.0,Dedicated private markets and hedge fund sleeve. Measured separately from the household strategic allocation. Max 25% in any single fund.
+SUSBAL,Sustainable Balanced,Cash and Equivalents,2,7,18,12.0,"Balanced allocation with binding exclusions: thermal coal, oil and gas exploration and production, controversial weapons, tobacco, and issuers with unresolved deforestation controversies."
+SUSBAL,Sustainable Balanced,Fixed Income,25,35,50,12.0,"Balanced allocation with binding exclusions: thermal coal, oil and gas exploration and production, controversial weapons, tobacco, and issuers with unresolved deforestation controversies."
+SUSBAL,Sustainable Balanced,Equity,30,40,55,12.0,"Balanced allocation with binding exclusions: thermal coal, oil and gas exploration and production, controversial weapons, tobacco, and issuers with unresolved deforestation controversies."
+SUSBAL,Sustainable Balanced,Alternatives,0,10,20,12.0,"Balanced allocation with binding exclusions: thermal coal, oil and gas exploration and production, controversial weapons, tobacco, and issuers with unresolved deforestation controversies."
+SUSBAL,Sustainable Balanced,Commodities,0,3,10,12.0,"Balanced allocation with binding exclusions: thermal coal, oil and gas exploration and production, controversial weapons, tobacco, and issuers with unresolved deforestation controversies."
+SUSBAL,Sustainable Balanced,Structured Products,0,5,15,12.0,"Balanced allocation with binding exclusions: thermal coal, oil and gas exploration and production, controversial weapons, tobacco, and issuers with unresolved deforestation controversies."

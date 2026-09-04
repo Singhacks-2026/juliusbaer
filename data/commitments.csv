@@ -1,0 +1,6 @@
+commitment_id,client_id,portfolio_id,fund_name,currency,committed,called_to_date,uncalled,expected_call_window
+COM-001,CL-0017,PF-0020,Meridian Private Equity Fund VII,USD,22000000,8000000,14000000,2026 Q4 to 2028 Q2
+COM-002,CL-0017,PF-0020,Global Infrastructure Debt Fund,USD,8000000,6200000,1800000,2026 Q4 to 2027 Q3
+COM-003,CL-0006,PF-0008,Meridian Private Equity Fund VII,USD,4500000,1500000,3000000,2026 Q4 to 2028 Q1
+COM-004,CL-0009,PF-0011,Meridian Private Equity Fund VII,USD,3000000,1900000,1100000,2027 Q1 to 2028 Q2
+COM-005,CL-0020,PF-0024,Meridian Private Equity Fund VII,USD,2000000,1100000,900000,2027 Q1 to 2028 Q3
