@@ -17,7 +17,19 @@ summary with no network. Everything is read-only against synthetic data.
 
 from __future__ import annotations
 
+import os
+
 import streamlit as st
+
+# On Streamlit Community Cloud the API key is set in Secrets; bridge it to the
+# environment so the explainer (which reads os.environ) picks it up. Locally,
+# the environment variable is used directly and this is a harmless no-op.
+try:
+    _key = st.secrets.get("ANTHROPIC_API_KEY")  # type: ignore[attr-defined]
+    if _key and not os.environ.get("ANTHROPIC_API_KEY"):
+        os.environ["ANTHROPIC_API_KEY"] = _key
+except Exception:
+    pass
 
 from wealth_intelligence.data_model import TODAY, load_book
 from wealth_intelligence.engine import analyse_book

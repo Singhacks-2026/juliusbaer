@@ -1,0 +1,14 @@
+# Workbench theme — restrained private-bank navy + gold.
+[theme]
+base = "light"
+primaryColor = "#b3944d"
+backgroundColor = "#f6f4ef"
+secondaryBackgroundColor = "#ffffff"
+textColor = "#1d2733"
+font = "sans serif"
+
+[server]
+headless = true
+
+[browser]
+gatherUsageStats = false

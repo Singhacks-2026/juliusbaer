@@ -17,6 +17,7 @@ _extracted/
 .env
 .env.*
 !.env.example
+.streamlit/secrets.toml
 
 # OS
 .DS_Store
