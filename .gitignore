@@ -10,5 +10,13 @@ venv/
 .tmp_extract/
 _extracted/
 
+# Grounded-explanation cache (regenerable; may contain model output)
+.wi_cache/
+
+# Secrets — never commit an API key
+.env
+.env.*
+!.env.example
+
 # OS
 .DS_Store

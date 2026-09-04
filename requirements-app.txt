@@ -1,0 +1,6 @@
+# RM Intelligence Workbench (Phase 3 UI + Phase 2 explainer).
+# The core signal engine (wealth_intelligence/) needs NONE of these — it is
+# pure standard library. These are only for the Streamlit app and the
+# Claude-grounded explanations.
+streamlit>=1.36
+anthropic>=0.69

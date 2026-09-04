@@ -79,9 +79,29 @@ and `facts` (the numbers).
   justified by `instruments.underlying_reference` and
   `concentration_limit_applies`.
 
-## What's next
+## Phase 2 — grounded explanation (`explainer.py`)
 
-- **Phase 2** — grounded natural-language explanation and suggested actions
-  (LLM explains the Findings; it does not compute them).
-- **Phase 3** — the RM workbench UI over `--json`: book triage → client story →
-  Accept / Edit / Dismiss, with a "Why?" expander on every insight.
+Turns a client's Findings into language the RM can use: a situation summary, a
+few talking points / actions to consider, and honest watch-outs. The model is
+handed only the computed facts, the client profile, the RM notes and the
+relevant event rows, and is told to reason strictly from them — it explains, it
+never computes. Every explanation is cached to disk (`.wi_cache/`), and the
+layer falls back to a deterministic summary when there is no API key or network,
+so the app always works.
+
+```bash
+export ANTHROPIC_API_KEY=sk-ant-...          # optional; enables live grounding
+python scripts/pregenerate.py CL-0014 CL-0012 CL-0017   # cache the hero clients
+```
+
+## Phase 3 — the RM workbench (`streamlit_app.py`)
+
+```bash
+pip install -r requirements-app.txt
+streamlit run streamlit_app.py
+```
+
+Three zones: **Book** (triage — who to call first) → **Client** (a grounded
+explanation + a look-through exposure snapshot) → **Signals** (every finding
+with a "Why?" expander showing the exact facts, and Accept / Edit / Dismiss so
+the RM stays in control).
